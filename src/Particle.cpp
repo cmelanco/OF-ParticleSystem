@@ -24,25 +24,11 @@ void Particle::update() {
     velocity += acceleration;
     location +=velocity;
     lifespan -= 1.0;
-    for(int i = 0; i<particles.size(); i++){
-        particles[i]->addParticle();
-        particles[i]->update();
-        if(particles[i]->isDead()){
-            delete particles[i];
-            particles.erase(particles.begin()+i);
-        }
-        
-    }
 }
 
 
 
 void Particle::display(){
-    for(int i=0;i<particles.size();i++){
-        
-        particles[i]->display();
-    }
-
     ofSetColor(255);
     //ofSetSphereResolution(100);
     ofPushMatrix();
@@ -100,10 +86,7 @@ bool Particle::isDead() {
     }
 }
 void Particle::addParticle(){
-    if (lifespan==100){
-        
-           particles.push_back(new newParticleSystem(ofVec3f(location.x,location.y,location.z), mass));
-    }
+  // Do nothing
 }
 
     

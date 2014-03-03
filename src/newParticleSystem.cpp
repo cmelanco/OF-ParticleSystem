@@ -11,12 +11,13 @@
 newParticleSystem::newParticleSystem(ofVec3f location ,float mass){
     origin = location;
     m = mass;
-    radius= 500;
+    radius= 500; // This isn't used?
     lifespan = 500;
 }
 
 
-void newParticleSystem::addParticle(){
+void newParticleSystem::addParticle()
+{
     
     particles.push_back(new Particle(ofVec3f(origin.x,origin.y,origin.z), m));
                             

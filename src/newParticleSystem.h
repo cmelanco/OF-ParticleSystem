@@ -25,7 +25,14 @@ class newParticleSystem :public particleBase{
     virtual void checkEdges();
     virtual void addParticle();
     std::vector<particleBase*> particles;
-    ~newParticleSystem();
+    virtual ~newParticleBase(){
+        for ( int i = 0; i < particles.size(); i++ )
+        {
+            delete  particles[i];
+        }
+        particles.clear();
+    }
+
     private:
     
     ofVec3f origin;

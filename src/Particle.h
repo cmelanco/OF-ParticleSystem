@@ -28,6 +28,5 @@ class Particle : public particleBase{
     float mass;
     float lifespan;
     ofColor color;
-    std::vector<particleBase*> particles;
 };
 #endif /* defined(__particlesystem1__Particle__) */
